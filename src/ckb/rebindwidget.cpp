@@ -188,12 +188,13 @@ void RebindWidget::setSelection(const QStringList& newSelection, bool applyPrevi
     ui->programKrModeBox->setCurrentIndex(0);
     ui->programKpModeBox->setEnabled(false);
     ui->programKrModeBox->setEnabled(false);
-    // Clear neu UI elements in MacroTab
+    // Clear new UI elements in MacroTab
     ui->pteMacroBox->setPlainText("");
     ui->pteMacroText->setPlainText("");
     ui->pteMacroComment->setPlainText("");
     // Fill in field and select tab according to action type
     bool mouse = act.isMouse();
+    ui->tabWidget->setTabEnabled(TAB_MACRO, !mouse); // switch off Macro tab on mouse specific panel
     if(mouse){
         // Mouse buttons
         ui->tabWidget->setCurrentIndex(TAB_MOUSE);

@@ -11,6 +11,13 @@ KbBindWidget::KbBindWidget(QWidget *parent) :
     ui->setupUi(this);
     ui->keyWidget->rgbMode(false);
     connect(ui->keyWidget, SIGNAL(selectionChanged(QStringList)), this, SLOT(newSelection(QStringList)));
+
+    QStringList qList;
+    qList.append("lshift");
+    qList.append("rshift");
+    qList.append("lshift + rshift + lcontrol + rcontrol + was weiss ich denn sonst noch so");
+    ui->modifierComboBox->addItems(qList);
+    // ui->mod1->setText("foobarseier");
 }
 
 KbBindWidget::~KbBindWidget(){
