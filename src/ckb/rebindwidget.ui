@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>687</width>
-    <height>342</height>
+    <width>793</width>
+    <height>337</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,8 +19,14 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QTabWidget" name="tabWidget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>5</number>
      </property>
      <widget class="QWidget" name="keyTab">
       <property name="sizePolicy">
@@ -1233,214 +1239,285 @@
       <attribute name="title">
        <string>Macro</string>
       </attribute>
-      <widget class="QWidget" name="layoutWidget1">
+      <widget class="QGroupBox" name="groupBox_5">
        <property name="geometry">
         <rect>
-         <x>40</x>
-         <y>12</y>
-         <width>241</width>
-         <height>171</height>
+         <x>5</x>
+         <y>0</y>
+         <width>176</width>
+         <height>186</height>
         </rect>
        </property>
-       <layout class="QGridLayout" name="gridLayout_8">
-        <item row="0" column="0">
-         <widget class="QGroupBox" name="groupBox_2">
-          <property name="title">
-           <string>Macro Key Actions</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QPlainTextEdit" name="pteMacroBox">
-          <property name="focusPolicy">
-           <enum>Qt::WheelFocus</enum>
-          </property>
-          <property name="tabChangesFocus">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QPlainTextEdit" name="pteMacroComment">
-       <property name="enabled">
-        <bool>true</bool>
+       <property name="title">
+        <string>Modifier Keys</string>
        </property>
+       <widget class="QWidget" name="formLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>171</width>
+          <height>126</height>
+         </rect>
+        </property>
+        <layout class="QFormLayout" name="formLayout">
+         <property name="fieldGrowthPolicy">
+          <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+         </property>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_6">
        <property name="geometry">
         <rect>
-         <x>420</x>
-         <y>20</y>
-         <width>311</width>
-         <height>31</height>
+         <x>190</x>
+         <y>0</y>
+         <width>536</width>
+         <height>226</height>
         </rect>
        </property>
-       <property name="focusPolicy">
-        <enum>Qt::WheelFocus</enum>
+       <property name="title">
+        <string>Macro Recording Contreol</string>
        </property>
-       <property name="contextMenuPolicy">
-        <enum>Qt::NoContextMenu</enum>
-       </property>
-       <property name="acceptDrops">
-        <bool>true</bool>
-       </property>
-       <property name="toolTip">
-        <string>What is this macro for?</string>
-       </property>
-       <property name="toolTipDuration">
-        <number>1</number>
-       </property>
-       <property name="inputMethodHints">
-        <set>Qt::ImhNone</set>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="tabChangesFocus">
-        <bool>true</bool>
-       </property>
-       <property name="documentTitle">
-        <string/>
-       </property>
-       <property name="undoRedoEnabled">
-        <bool>true</bool>
-       </property>
-       <property name="readOnly">
-        <bool>false</bool>
-       </property>
-       <property name="plainText">
-        <string/>
-       </property>
-       <property name="tabStopWidth">
-        <number>1</number>
-       </property>
+       <widget class="QWidget" name="gridLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>5</x>
+          <y>20</y>
+          <width>531</width>
+          <height>182</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_6" rowstretch="1,1,2,1,1,1">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetMinimumSize</enum>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Macro Comment</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Macro Key Actions</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QPlainTextEdit" name="pteMacroBox">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>55</height>
+            </size>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::WheelFocus</enum>
+           </property>
+           <property name="toolTipDuration">
+            <number>1</number>
+           </property>
+           <property name="statusTip">
+            <string>is filled with macro keynames when macro is recorded.</string>
+           </property>
+           <property name="tabChangesFocus">
+            <bool>false</bool>
+           </property>
+           <property name="tabStopWidth">
+            <number>1</number>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Macro Text</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QPlainTextEdit" name="pteMacroText">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::WheelFocus</enum>
+           </property>
+           <property name="contextMenuPolicy">
+            <enum>Qt::NoContextMenu</enum>
+           </property>
+           <property name="acceptDrops">
+            <bool>true</bool>
+           </property>
+           <property name="toolTip">
+            <string>is filled when macro ist recorded</string>
+           </property>
+           <property name="toolTipDuration">
+            <number>1</number>
+           </property>
+           <property name="verticalScrollBarPolicy">
+            <enum>Qt::ScrollBarAlwaysOff</enum>
+           </property>
+           <property name="documentTitle">
+            <string/>
+           </property>
+           <property name="undoRedoEnabled">
+            <bool>true</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+           <property name="plainText">
+            <string/>
+           </property>
+           <property name="tabStopWidth">
+            <number>1</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QPlainTextEdit" name="pteMacroComment">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::WheelFocus</enum>
+           </property>
+           <property name="contextMenuPolicy">
+            <enum>Qt::NoContextMenu</enum>
+           </property>
+           <property name="acceptDrops">
+            <bool>true</bool>
+           </property>
+           <property name="toolTip">
+            <string>What is this macro for?</string>
+           </property>
+           <property name="toolTipDuration">
+            <number>1</number>
+           </property>
+           <property name="inputMethodHints">
+            <set>Qt::ImhNone</set>
+           </property>
+           <property name="verticalScrollBarPolicy">
+            <enum>Qt::ScrollBarAlwaysOff</enum>
+           </property>
+           <property name="tabChangesFocus">
+            <bool>true</bool>
+           </property>
+           <property name="documentTitle">
+            <string/>
+           </property>
+           <property name="undoRedoEnabled">
+            <bool>true</bool>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+           <property name="plainText">
+            <string/>
+           </property>
+           <property name="tabStopWidth">
+            <number>1</number>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0" colspan="2">
+          <widget class="QLabel" name="lbl_macro">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <italic>true</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Comment label for help</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0" colspan="2">
+          <layout class="QGridLayout" name="gridLayout_10">
+           <item row="0" column="2">
+            <widget class="QPushButton" name="btnStopMacro">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Stop</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="btnStartMacro">
+             <property name="text">
+              <string>Start</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QPushButton" name="btnClearMacro">
+             <property name="text">
+              <string>Clear</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>Control</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
       </widget>
-      <widget class="QPlainTextEdit" name="pteMacroText">
-       <property name="geometry">
-        <rect>
-         <x>420</x>
-         <y>60</y>
-         <width>311</width>
-         <height>61</height>
-        </rect>
-       </property>
-       <property name="focusPolicy">
-        <enum>Qt::StrongFocus</enum>
-       </property>
-       <property name="contextMenuPolicy">
-        <enum>Qt::NoContextMenu</enum>
-       </property>
-       <property name="acceptDrops">
-        <bool>false</bool>
-       </property>
-       <property name="inputMethodHints">
-        <set>Qt::ImhNoAutoUppercase</set>
-       </property>
-       <property name="documentTitle">
-        <string/>
-       </property>
-       <property name="undoRedoEnabled">
-        <bool>false</bool>
-       </property>
-       <property name="readOnly">
-        <bool>false</bool>
-       </property>
-       <property name="plainText">
-        <string/>
-       </property>
-       <property name="tabStopWidth">
-        <number>1</number>
-       </property>
-      </widget>
-      <widget class="QWidget" name="layoutWidget">
-       <property name="geometry">
-        <rect>
-         <x>300</x>
-         <y>20</y>
-         <width>119</width>
-         <height>81</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
-         <widget class="QGroupBox" name="groupBox_3">
-          <property name="title">
-           <string>Macro Comment</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QGroupBox" name="groupBox_4">
-          <property name="title">
-           <string>Macro Text</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="layoutWidget_2">
-       <property name="geometry">
-        <rect>
-         <x>300</x>
-         <y>160</y>
-         <width>436</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <layout class="QGridLayout" name="gridLayout_10">
-        <item row="0" column="0">
-         <widget class="QGroupBox" name="groupBox">
-          <property name="title">
-           <string>Macro recording</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="2">
-         <widget class="QPushButton" name="btnStopMacro">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="text">
-           <string>Stop</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QPushButton" name="btnStartMacro">
-          <property name="text">
-           <string>Start</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="3">
-         <widget class="QPushButton" name="btnClearMacro">
-          <property name="text">
-           <string>Clear</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QLabel" name="lbl_macro">
-       <property name="geometry">
-        <rect>
-         <x>300</x>
-         <y>130</y>
-         <width>431</width>
-         <height>27</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Comment label for help</string>
-       </property>
-      </widget>
-      <zorder>pteMacroComment</zorder>
-      <zorder>layoutWidget1</zorder>
-      <zorder>layoutWidget</zorder>
-      <zorder>pteMacroText</zorder>
-      <zorder>layoutWidget_2</zorder>
-      <zorder>lbl_macro</zorder>
      </widget>
     </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_9">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -1493,9 +1570,6 @@
   </layout>
  </widget>
  <tabstops>
-  <tabstop>tabWidget</tabstop>
-  <tabstop>pteMacroComment</tabstop>
-  <tabstop>pteMacroBox</tabstop>
   <tabstop>dpiButton</tabstop>
   <tabstop>mb2Box</tabstop>
   <tabstop>btnStartMacro</tabstop>
@@ -1548,22 +1622,6 @@
  <resources/>
  <connections>
   <connection>
-   <sender>cancelButton</sender>
-   <signal>clicked()</signal>
-   <receiver>pteMacroBox</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>735</x>
-     <y>331</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>252</x>
-     <y>201</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>btnClearMacro</sender>
    <signal>clicked()</signal>
    <receiver>pteMacroBox</receiver>
@@ -1592,6 +1650,22 @@
     <hint type="destinationlabel">
      <x>705</x>
      <y>131</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cancelButton</sender>
+   <signal>clicked()</signal>
+   <receiver>pteMacroBox</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>735</x>
+     <y>331</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>252</x>
+     <y>201</y>
     </hint>
    </hints>
   </connection>

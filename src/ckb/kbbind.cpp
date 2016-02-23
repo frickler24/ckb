@@ -1,5 +1,4 @@
 #include <QDateTime>
-#include <QUrl>
 #include "ckbsettings.h"
 #include "kbbind.h"
 #include "kbmode.h"
