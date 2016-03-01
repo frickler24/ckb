@@ -1,4 +1,5 @@
 #include <QStandardPaths>
+#include <qformlayout.h>
 #include "rebindwidget.h"
 #include "ui_rebindwidget.h"
 #include <qdebug.h>     // lae.
@@ -54,6 +55,9 @@ RebindWidget::RebindWidget(QWidget *parent) :
 #else
     ui->progTipLabel->setText("<p style=\"line-height:150%\">Tip: use <font face=\"monospace\">xdg-open</font> to launch a file or directory. For instance, to open your home folder:<br /><font face=\"monospace\">&nbsp;&nbsp;xdg-open " + QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "</font></p>");
 #endif
+
+    ///> reserve additional space in an other UI for modifier keys
+    uiHandleToAdditionalSpace = new UiHandle(0);
 }
 
 RebindWidget::~RebindWidget(){
@@ -145,9 +149,13 @@ void RebindWidget::setSelection(const QStringList& newSelection, bool applyPrevi
     selection = newSelection;
     if(newSelection.isEmpty()){
         hide();
+        if (uiHandleToAdditionalSpace) uiHandleToAdditionalSpace->deleteUi();
         return;
-    } else
+    } else {
+        ///> Create UI elements for modifier keys
+        uiHandleToAdditionalSpace->setupUi(modKeys);
         show();
+    }
 
     bool hasAction = false;
     QString action;

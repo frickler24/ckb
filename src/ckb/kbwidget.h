@@ -5,6 +5,7 @@
 #include <QListWidgetItem>
 #include <QWidget>
 #include "kb.h"
+#include "uihandle.h"
 
 // Central widget for displaying/controlling a device
 
@@ -45,6 +46,13 @@ private:
 
     const static int GUID = Qt::UserRole;
     const static int NEW_FLAG = Qt::UserRole + 1;
+
+    /// \brief first try to set additionalSpace info in KbProfile
+    /// Create a new object uiHandle and call the constructor with pointer to
+    /// a new free space element in the UI.
+    /// This is used to link two UI elements which don't have anyother connection.
+    /// \todo Should it be static?
+    UiHandle* uiHandle;
 
 private slots:
     void updateProfileList();

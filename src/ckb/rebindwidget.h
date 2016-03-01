@@ -1,10 +1,11 @@
-#ifndef BINDDIALOG_H
-#define BINDDIALOG_H
+#ifndef REBINDWIDGET_H
+#define REBINDWIDGET_H
 
 #include <QWidget>
 #include "kbbind.h"
 #include "kbprofile.h"
 #include "macroreader.h"
+#include "uihandle.h"
 
 // Key rebinding widget
 
@@ -96,6 +97,8 @@ private:
     QStringList mouseExtKeys;
     QStringList wheelKeys;
     MacroReader* macReader;     ///< \brief macReader holds the MacroReader when macro recording starts.
+
+    UiHandle* uiHandleToAdditionalSpace;
 };
 
-#endif // BINDDIALOG_H
+#endif // REBINDWIDGET_H

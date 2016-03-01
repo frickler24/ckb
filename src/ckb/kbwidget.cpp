@@ -39,7 +39,7 @@ KbWidget::KbWidget(QWidget *parent, Kb *_device) :
         if(!device->isMouse())
             ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->mPerfTab));
         // Remove keyboard Performance tab from non-keyboards
-        if(!device->isKeyboard())
+        if(!device->isKeyboard()) // ToDo remove macro tab from non KB-Tab
             ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->kPerfTab));
     }
     // Hide poll rate and FW update as appropriate
@@ -55,6 +55,9 @@ KbWidget::KbWidget(QWidget *parent, Kb *_device) :
     // Set monochrome mode according to hardware
     if(device->monochrome)
         ui->lightWidget->setMonochrome();
+
+    ///> \brief reserve additional UI space below the list of available designs
+    uiHandle = new UiHandle(ui->kBAdditionalSpace);
 }
 
 KbWidget::~KbWidget(){
